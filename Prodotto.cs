@@ -8,10 +8,17 @@ namespace csharp_oop_shop
 {
     internal class Prodotto
     {
-        private int codice;
-        public string name;
-        public string description;
-        public double price;
-        public int iva;
+        public int code { get; }
+        public string name { get; set; }
+        public string description {get; set;}
+        public decimal price {get; set;}
+        public decimal iva {get; set;}
+
+        public Prodotto(string name, double price)
+        {
+            this.code = new Random().Next();
+            this.name = name;
+            this.price = price;
+        }
     }
 }
