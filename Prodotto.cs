@@ -26,5 +26,10 @@ namespace csharp_oop_shop
             decimal finalPrice = this.price + (this.price * this.iva / 100);
             return finalPrice;
         }
+
+        public string getExtendedName ()
+        {
+            return $"{this.code} {this.name}";
+        }
     }
 }
