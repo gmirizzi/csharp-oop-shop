@@ -16,7 +16,7 @@ namespace csharp_oop_shop
 
         public Prodotto(string name, decimal price)
         {
-            this.code = new Random().Next();
+            this.code = new Random().Next(0, 100000000);
             this.name = name;
             this.price = price;
         }
@@ -30,6 +30,16 @@ namespace csharp_oop_shop
         public string getExtendedName ()
         {
             return $"{this.code} {this.name}";
+        }
+
+        public string formattedCode ()
+        {
+            string stringCode = Convert.ToString(this.code, 10);
+            while (stringCode.Length<8)
+            {
+                stringCode = 0 + stringCode;
+            }
+            return stringCode;
         }
     }
 }
