@@ -14,11 +14,17 @@ namespace csharp_oop_shop
         public decimal price {get; set;}
         public decimal iva {get; set;}
 
-        public Prodotto(string name, double price)
+        public Prodotto(string name, decimal price)
         {
             this.code = new Random().Next();
             this.name = name;
             this.price = price;
+        }
+
+        public decimal getPriceWIva ()
+        {
+            decimal finalPrice = this.price + (this.price * this.iva / 100);
+            return finalPrice;
         }
     }
 }
